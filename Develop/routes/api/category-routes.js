@@ -31,18 +31,47 @@ router.get('/:id', async (req, res) => {
     } else {
       res.status(404).json({ error: 'Category not found' });
     }
+
   } catch (error) {
-    console.error('Error fetching category:', error);
+    console.error('Error fetching category:', error); //TENGO QUE BORRAR ESTE MUGREROOOO!!!!!
     res.status(500).json({ error: 'Error fetching category'});
   }
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create a new category
+  try {
+    const { category_name } = req.body;
+    const newCategory = await Category.create({
+      category_name
+    });
+    res.status(201).json(newCategory);
+
+  } catch (error) {
+    console.error('Error creating category:', error); //TENGO QUE BORRAR ESTE MUGREROOOO!!!!!
+    res.status(500).json({ error: 'Error creating category' });
+  }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
   // update a category by its `id` value
+try {
+  const categoryId = req.params.id;
+  const { category_name } = req.body; // Takes updated category data from the req. body.
+  const category = await Category.findByPk(categoryId); // Find category by its id.
+
+  if (!category) {
+    return res.status(404).json({ error: 'Category not found' });
+  }
+  await category.update({
+    category_name
+  });
+
+  res.json(category);
+} catch (error) {
+  console.error('Error updating category:', error);
+  res.status(500).json({ error: 'Error updating category'});
+}
 });
 
 router.delete('/:id', (req, res) => {
