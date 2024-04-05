@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
     res.status(200).json(tags);
 
   } catch (error) {
-    console.error('Error fetching tags:', error); // BORRAR SI ES INNECESARIOOOO/////////////////////////////////////////////////////
+    console.error('Error fetching tags:', error); 
     res.status(500).json({ error: 'Error fetching tags' });
   }
 });
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
     }
 
   } catch (error) {
-    console.error('Error fetching tag:', error); // BORRAR SI ES INNECESARIOOOO/////////////////////////////////////////////////////
+    console.error('Error fetching tag:', error); 
     res.status(500).json({ error: 'Error fetching tag' });
   }
 });
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
     res.status(201).json(newTag); // Status 201 = created
 
   } catch (error) {
-    console.error('Error creating tag:', error); // BORRAR SI ES INNECESARIOOOO/////////////////////////////////////////////////////
+    console.error('Error creating tag:', error); 
     res.status(400).json({ error: 'Error creating tag' }); // Status 400 = Bad Request
   }
 });
@@ -69,7 +69,7 @@ router.put('/:id', async (req, res) => {
     }
 
   } catch (error) {
-    console.error('Error updating tag:', error); // BORRAR SI ES INNECESARIOOOO/////////////////////////////////////////////////////
+    console.error('Error updating tag:', error);
     res.status(500).json({ error: 'Error updating tag' });
   }
 });
@@ -87,7 +87,7 @@ router.delete('/:id', async (req, res) => {
     }
 
   } catch (error) {
-    console.error('Error deleting tag:', error); // BORRAR SI ES INNECESARIOOOO/////////////////////////////////////////////////////
+    console.error('Error deleting tag:', error);
     res.status(500).json({ error: 'Error deleting tag' });
   }
 });

@@ -5,6 +5,9 @@ CREATE DATABASE ecommerce_db;
 
 USE ecommerce_db;
 
+-- The following code is not necesary, because of the models and thet they overwrite this schema.
+
+
 -- CREATE TABLE category (
 --     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 --     category_name VARCHAR(30) NOT NULL

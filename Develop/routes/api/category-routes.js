@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
     res.status(200).json(categories);
   } catch (error) {
-    console.error('Error fetching categories:', error); //TENGO QUE BORRAR ESTE MUGREROOOO!!!!!
+    console.error('Error fetching categories:', error); 
     res.status(500).json({ error: 'Error fetching categories' });
   }
 });
@@ -36,7 +36,7 @@ router.get('/:id', async (req, res) => {
     }
 
   } catch (error) {
-    console.error('Error fetching category:', error); //TENGO QUE BORRAR ESTE MUGREROOOO!!!!!
+    console.error('Error fetching category:', error); 
     res.status(500).json({ error: 'Error fetching category'});
   }
 });
@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
     res.status(201).json(newCategory);
 
   } catch (error) {
-    console.error('Error creating category:', error); //TENGO QUE BORRAR ESTE MUGREROOOO!!!!!
+    console.error('Error creating category:', error); 
     res.status(500).json({ error: 'Error creating category' });
   }
 });
@@ -92,7 +92,7 @@ try {
   res.json({ message: 'Category deleted successfully' });
 
 } catch (error) {
-  console.error('Error deleting category:', error);  //TENGO QUE BORRAR ESTE MUGREROOOO!!!!!
+  console.error('Error deleting category:', error);  
   res.status(500).json({ error: 'Error deleting category' });
 }
 });
