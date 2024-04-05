@@ -18,6 +18,6 @@ After the server is listening and running, you can proceed to open the localhost
 
 ### Developer info:
 
-GitHub Repository:
+GitHub Repository: https://github.com/BryanGC96/Object-Relational-Mapping 
 
-Running application video example:
+Running application video example: https://drive.google.com/file/d/11eCimYyPwh5OiwC109B9FBXH6dL3i3An/view?usp=sharing 
